@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:myview="http://schemas.android.com/apk/res/com.example.mobilesafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SettingActivity" 
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="设置中心"/>
+	<com.example.view.SettingView
+	    android:id="@+id/sv_update"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    myview:title="自动更新设置"
+	    myview:desc_on="自动更新已开启"
+	    myview:desc_off="自动更新已关闭"
+	    />
+	<com.example.view.SettingView
+	    android:id="@+id/sv_phone"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    myview:title="电话归属地显示设置"
+	    myview:desc_on="归属地显示已开启"
+	    myview:desc_off="归属地显示已关闭"/>
+	
+	<com.example.view.SettingClickView
+	    android:id="@+id/scv_style"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	
+	<com.example.view.SettingClickView
+	    android:id="@+id/scv_location"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	
+	<com.example.view.SettingView
+	    android:id="@+id/sv_black_number"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    myview:title="黑名单更新设置"
+	    myview:desc_on="黑名单更新已开启"
+	    myview:desc_off="黑名单更新已关闭"
+	    />
+</LinearLayout>

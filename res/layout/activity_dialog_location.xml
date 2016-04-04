@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DialogLocationActivity"
+    android:background="#5000" >
+
+    <TextView 
+        android:id="@+id/tv_dialog_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="按住提示框拖到任意位置\n按手机返回键立即生效"
+        android:background="@drawable/button"
+        android:gravity="center"/>
+    
+    <ImageView 
+        android:id="@+id/iv_drag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drag"
+        android:clickable="true"/>
+    
+    <TextView 
+        android:id="@+id/tv_dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:text="按住提示框拖到任意位置\n按手机返回键立即生效"
+        android:textColor="@color/black"
+        android:background="@drawable/button"
+        android:gravity="center"/>
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myview="http://schemas.android.com/apk/res/com.example.mobilesafe"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".SetUp1Activity" 
+    android:orientation="vertical">
+	
+    <TextView
+        style="@style/TitleStyle"
+        android:text="4.设置完成"/>
+	
+	<CheckBox 
+	    android:id="@+id/cb_set"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="防盗保护没有开启"
+	    android:textColor="@android:color/black"/>
+   
+	<LinearLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center">
+        <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            />
+        <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            />
+        <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            />
+        <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@android:drawable/presence_online"
+            />
+    </LinearLayout>
+    
+	<RelativeLayout 
+	    android:layout_weight="1"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp">
+	    <ImageView 
+	        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/setup3"/>
+	    <Button
+	        android:onClick="next"
+	        android:text="设置完成"
+	        style="@style/ButtonNextStyle"/>
+	    
+	    <Button 
+	        android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:background="@drawable/btn_green_selector"
+            android:text="上一步"
+            android:layout_alignParentBottom="true"
+            android:onClick="back"/>"
+	    
+	</RelativeLayout>
+</LinearLayout>

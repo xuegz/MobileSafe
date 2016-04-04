@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AToolActivity" 
+    android:orientation="vertical"
+    android:background="@android:color/white">
+	
+    <TextView 
+        style="@style/TitleStyle"
+        android:text="高级工具"/>  
+    <TextView  
+        style="@style/AToolTextViewStyle"     
+        android:text="电话归属地查询"
+        android:onClick="queryAddress"/>
+    <TextView  
+        style="@style/AToolTextViewStyle"     
+        android:text="短信备份"
+        android:onClick="smsBackup"/>
+
+</LinearLayout>

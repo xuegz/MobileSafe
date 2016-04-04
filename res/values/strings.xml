@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobileSafe</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_lost_find">LostFindActivity</string>
+    <string name="title_activity_set_up1">SetUp1Activity</string>
+    <string name="title_activity_set_up2">SetUp2Activity</string>
+    <string name="title_activity_set_up3">SetUp3Activity</string>
+    <string name="title_activity_set_up4">SetUp4Activity</string>
+    <string name="title_activity_atool">AToolActivity</string>
+    <string name="title_activity_address">AddressActivity</string>
+    <string name="title_activity_dialog_location">DialogLocationActivity</string>
+    <string name="title_activity_call_safe">CallSafeActivity</string>
+    <string name="title_activity_app_manager">AppManagerActivity</string>
+    <string name="title_activity_task">TaskActivity</string>
+    <string name="title_activity_task_manager_setting">TaskManagerSettingActivity</string>
+
+</resources>
