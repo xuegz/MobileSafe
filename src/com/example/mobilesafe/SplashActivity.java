@@ -88,6 +88,7 @@ public class SplashActivity extends Activity {
 		String versionName=getVersionName();
 		tv_version.setText(versionName);
 		copyDB("address.db");//拷贝归属地查询数据库
+		copyDB("antivirus.db");
 		SharedPreferences sp=getSharedPreferences("info",MODE_PRIVATE);
 		boolean checked=sp.getBoolean("status", true);
 		if (checked){

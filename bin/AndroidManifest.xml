@@ -67,8 +67,10 @@
         <activity android:name="com.example.mobilesafe.CallSafeActivity" />
         <activity android:name="com.example.mobilesafe.AppManagerActivity" />
         <activity android:name="com.example.mobilesafe.TaskActivity" />
-        <activity android:name="com.example.mobilesafe.TaskManagerSettingActivity"/>
-        
+        <activity android:name="com.example.mobilesafe.TaskManagerSettingActivity" />
+		<activity android:name="com.example.mobilesafe.AntivirusActivity"/>
+		
+		
         <!-- 监听开机广播 -->
         <receiver android:name="com.example.receiver.SIMReceiver" >
             <intent-filter>
@@ -88,8 +90,10 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.example.service.LocationService" ></service>
-        <service android:name="com.example.service.CallSafeService" ></service>
+        <service android:name="com.example.service.LocationService" >
+        </service>
+        <service android:name="com.example.service.CallSafeService" >
+        </service>
 
         
     </application>
