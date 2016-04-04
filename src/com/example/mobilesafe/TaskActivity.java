@@ -30,6 +30,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/*
+ * 进程管理界面
+ */
 @SuppressLint("NewApi")
 public class TaskActivity extends Activity {
 	private ListView lv_task;
@@ -77,6 +80,7 @@ public class TaskActivity extends Activity {
 		long availMem=outInfo.availMem;//获取剩余内存
 		long totalMem=outInfo.totalMem;//获取总内存
 		tv_task_memory.setText("剩余/总内存"+Formatter.formatFileSize(this, availMem)+"/"+Formatter.formatFileSize(this, totalMem));
+		
 		new Thread(){
 			public void run() {
 				taskInfos=TaskInfoParser.getTaskInfos(TaskActivity.this);
@@ -92,6 +96,7 @@ public class TaskActivity extends Activity {
 				handler.sendEmptyMessage(0);
 			};
 		}.start();
+		
 		lv_task.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 				ViewHolder holder=(ViewHolder) view.getTag();

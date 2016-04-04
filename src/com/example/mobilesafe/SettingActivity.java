@@ -15,7 +15,9 @@ import com.example.service.CallSafeService;
 import com.example.view.SettingClickView;
 import com.example.view.SettingView;
 
-
+/*
+ * 设置中心页面
+ */
 public class SettingActivity extends Activity {
 	private SettingView sv_update;
 	private SettingView sv_phone;

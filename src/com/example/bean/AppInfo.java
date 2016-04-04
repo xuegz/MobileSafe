@@ -2,6 +2,9 @@ package com.example.bean;
 
 import android.graphics.drawable.Drawable;
 
+/*
+ * app实体类
+ */
 public class AppInfo {
 	private Drawable icon;//图片
 	private String appName;//程序的名字

@@ -1,8 +1,11 @@
 package com.example.bean;
 
+/*
+ * 黑名单
+ */
 public class BlackNumber {
-	private String number;
-	private String mode;
+	private String number;//号码
+	private String mode;//拦截模式
 
 	public String getNumber() {
 		return number;

@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
+/*
+ * 手机防盗设置界面  抽象类
+ */
 public abstract class SetUpActivity extends Activity {
 	private GestureDetector detector;
 	@Override

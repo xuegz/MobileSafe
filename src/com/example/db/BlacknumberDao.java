@@ -10,6 +10,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+/*
+ * 黑名单
+ */
 public class BlacknumberDao {
 	private BlacknumberOpenHelper oh;
 	private SQLiteDatabase db;

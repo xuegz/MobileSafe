@@ -9,6 +9,9 @@ import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 
+/*
+ * 进程管理设置页面
+ */
 public class TaskManagerSettingActivity extends Activity {
 	private CheckBox cb_task_setting;
 	private RelativeLayout rl_task;

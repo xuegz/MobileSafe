@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+/*
+ * 手机防盗设置界面2
+ */
 public class SetUp2Activity extends SetUpActivity {
 	private SharedPreferences sp;
 	private SettingView sv;

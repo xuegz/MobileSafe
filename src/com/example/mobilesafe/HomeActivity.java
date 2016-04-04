@@ -45,35 +45,35 @@ public class HomeActivity extends Activity {
 					int position, long arg3) {
 				Intent intent=new Intent();
 				switch (position) {
-					case 0:
+					case 0://手机防盗
 						showPasswdDialog();
 						break;
-					case 1:
+					case 1://通讯卫士
 						intent.setClass(HomeActivity.this, CallSafeActivity.class);
 						startActivity(intent);
 						break;
-					case 2:
+					case 2://软件管理
 						intent.setClass(HomeActivity.this, AppManagerActivity.class);
 						startActivity(intent);
 						break;
-					case 3:
+					case 3://进程管理
 						intent.setClass(HomeActivity.this, TaskActivity.class);
 						startActivity(intent);
 						break;
-					case 4:
+					case 4://流量统计
 						
 						break;
-					case 5:
+					case 5://手机杀毒
 						
 						break;
-					case 6:
+					case 6://缓存清理
 						
 						break;
-					case 7:
+					case 7://高级工具
 						intent.setClass(HomeActivity.this, AToolActivity.class);
 						startActivity(intent);
 						break;
-					case 8:
+					case 8://设置中心
 						intent.setClass(HomeActivity.this, SettingActivity.class);
 						startActivity(intent);
 						break;

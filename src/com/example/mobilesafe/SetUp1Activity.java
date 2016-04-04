@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
+/*
+ * 手机防盗设置界面1
+ */
 public class SetUp1Activity extends SetUpActivity {
 
 	@Override

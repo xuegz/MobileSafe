@@ -10,6 +10,10 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 
+/*
+ * 获取手机上所有安装的app的信息
+ * packageManager
+ */
 public class AppInfos {
 	public static List<AppInfo> getAppInfos(Context context){
 		List<AppInfo> packageAppInfos = new ArrayList<AppInfo>();

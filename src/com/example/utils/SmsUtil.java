@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 public class SmsUtil {
 	/*
 	 * 短信备份
+	 * xml
 	 */
 	public static void backup(Context context){
 		XmlSerializer xs=Xml.newSerializer();

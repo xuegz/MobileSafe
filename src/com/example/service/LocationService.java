@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.Toast;
 
+/*
+ * 定位服务
+ */
 public class LocationService extends Service {
 	private LocationManager manager;
 	private MyLocationListener my;
@@ -29,7 +32,7 @@ public class LocationService extends Service {
 		Criteria criteria=new Criteria();
 		String provider=manager.getBestProvider(criteria, true);
 		criteria.setCostAllowed(true);
-		criteria.setAccuracy(Criteria.ACCURACY_FINE);
+		criteria.setAccuracy(Criteria.ACCURACY_FINE);//设置精确度
 		manager.requestLocationUpdates(provider,0, 0,my);
 	}
 	

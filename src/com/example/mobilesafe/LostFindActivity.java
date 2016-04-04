@@ -10,6 +10,9 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/*
+ * 手机防盗页面
+ */
 public class LostFindActivity extends Activity {
 	private SharedPreferences sp;
 	private TextView tv_set;
@@ -46,6 +49,7 @@ public class LostFindActivity extends Activity {
 			public void onClick(View v) {
 				startActivity(new Intent(LostFindActivity.this, SetUp1Activity.class));
 				finish();
+				//页面动态跳转
 				overridePendingTransition(R.anim.activity_next_in, R.anim.activity_next_out);
 			}
 		});

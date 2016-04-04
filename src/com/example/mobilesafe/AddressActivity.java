@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+ * 归属地查询页面
+ */
 public class AddressActivity extends Activity {
 	private EditText et_phone;
 	private TextView tv_address;
@@ -30,7 +33,9 @@ public class AddressActivity extends Activity {
 		});
 		
 	}
-
+	/*
+	 * 查询归属地
+	 */
 	public void query(View v){
 		String number=et_phone.getText().toString();
 		String address=QueryPhone.getAddress(number);

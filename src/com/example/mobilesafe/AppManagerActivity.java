@@ -35,6 +35,9 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/*
+ * 软件管理页面
+ */
 @SuppressLint("NewApi")
 public class AppManagerActivity extends Activity implements OnClickListener {
 	private ListView lv_app_manager;
@@ -100,6 +103,8 @@ public class AppManagerActivity extends Activity implements OnClickListener {
 					}else{
 						click_appInfo=systemAppInfos.get(position-userAppInfos.size()-2);
 					}
+					
+					//生成popupWindow对话框
 					popupWindow=new PopupWindow(view,-2,-2);
 					//需要注意：使用popupwindow必须设置背景，否则没有动画，此处为透明背景
 					popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -110,6 +115,7 @@ public class AppManagerActivity extends Activity implements OnClickListener {
 					ScaleAnimation animation=new ScaleAnimation(0.5f, 1.0f, 0.5f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
 					animation.setDuration(300);
 					view.startAnimation(animation);
+					
 					ll_run.setOnClickListener(AppManagerActivity.this);
 					ll_share.setOnClickListener(AppManagerActivity.this);
 					ll_uninstall.setOnClickListener(AppManagerActivity.this);
@@ -117,7 +123,7 @@ public class AppManagerActivity extends Activity implements OnClickListener {
 			}
 		});
 	}
-	
+	//popupwindow对话框消失
 	private void popupWindowDismiss(){
 		if (popupWindow!=null&&popupWindow.isShowing()){
 			popupWindow.dismiss();
@@ -217,17 +223,17 @@ public class AppManagerActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.ll_run:
+			case R.id.ll_run://运行
 				Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(click_appInfo.getPackageName());
 	            startActivity(LaunchIntent);
 	            popupWindowDismiss();
 				break;
-			case R.id.ll_uninstall:
+			case R.id.ll_uninstall://卸载
 		        Intent intent=new Intent(Intent.ACTION_DELETE,Uri.parse("package:"+click_appInfo.getPackageName()));  
 		        startActivityForResult(intent, 1);
 		        popupWindowDismiss();
 				break;
-			case R.id.ll_share:
+			case R.id.ll_share://分享
 				Intent shareIntent = new Intent();
 		        shareIntent.setAction(Intent.ACTION_SEND);
 		        shareIntent.putExtra(Intent.EXTRA_TEXT, "推荐您的软件为"+click_appInfo.getAppName());

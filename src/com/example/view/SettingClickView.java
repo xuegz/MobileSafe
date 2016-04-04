@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/*
+ * 这是自定义控件
+ */
 public class SettingClickView extends RelativeLayout {
 	private TextView tv_title;
 	private TextView tv_desc;
@@ -25,6 +28,7 @@ public class SettingClickView extends RelativeLayout {
 	}
 	
 	public void initView(){
+		//这里是this
 		View.inflate(getContext(), R.layout.view_setting_click, this);
 		tv_title=(TextView) findViewById(R.id.tv_title);
 		tv_desc=(TextView) findViewById(R.id.tv_desc);

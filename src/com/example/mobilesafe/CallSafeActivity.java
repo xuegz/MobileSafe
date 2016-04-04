@@ -28,6 +28,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*
+ * 通讯卫士
+ */
 public class CallSafeActivity extends Activity {
 	private ListView lv_safe;
 	private ProgressBar pb_refresh;

@@ -14,6 +14,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+/*
+ * 手机防盗设置界面4
+ */
 public class SetUp4Activity extends SetUpActivity {
 	private SharedPreferences sp;
 	private CheckBox cb_set;

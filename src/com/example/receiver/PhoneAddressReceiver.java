@@ -9,6 +9,9 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 import com.example.utils.QueryPhone;
 
+/*
+ * 监听来电去电
+ */
 public class PhoneAddressReceiver extends BroadcastReceiver {
 	private SharedPreferences sp;
 	

@@ -15,6 +15,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*
+ * 归属地提示框位置页面
+ */
 public class DialogLocationActivity extends Activity {
 	private ImageView iv_drag;
 	private TextView tv_dialog_top;
@@ -70,6 +73,7 @@ public class DialogLocationActivity extends Activity {
 				}
 			}
 		});
+		
 		iv_drag.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {

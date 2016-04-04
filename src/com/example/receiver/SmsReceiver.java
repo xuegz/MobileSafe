@@ -13,6 +13,9 @@ import android.sax.StartElementListener;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 
+/*
+ * 监听短信
+ */
 public class SmsReceiver extends BroadcastReceiver {
 	SharedPreferences sp;
 	@Override

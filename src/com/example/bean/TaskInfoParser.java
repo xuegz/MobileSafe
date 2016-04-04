@@ -17,39 +17,42 @@ import android.graphics.drawable.Drawable;
 import android.os.Debug.MemoryInfo;
 import android.text.format.Formatter;
 
-
+/*
+ * 获取运行的进程
+ * activityManager
+ */
 public class TaskInfoParser {
-
+	
 	public static List<TaskInfo> getTaskInfos(Context context) {
-
+	
 		PackageManager packageManager = context.getPackageManager();
-
 		List<TaskInfo> TaskInfos = new ArrayList<TaskInfo>();
 
-		
-		ActivityManager activityManager = (ActivityManager) context
-				.getSystemService(context.ACTIVITY_SERVICE);
-		
-		List<RunningAppProcessInfo> appProcesses = activityManager
-				.getRunningAppProcesses();
+		// 获取到进程管理器
+		ActivityManager activityManager = (ActivityManager) context.getSystemService(context.ACTIVITY_SERVICE);
+		// 获取到手机上面所有运行的进程
+		List<RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
 
 		for (RunningAppProcessInfo runningAppProcessInfo : appProcesses) {
 			TaskInfo taskInfo = new TaskInfo();
+			// 获取到进程的名字,默认为包名
 			String processName = runningAppProcessInfo.processName;
 			taskInfo.setPackageName(processName);
 			try {
+				//获取内存大小
 				MemoryInfo[] memoryInfo = activityManager
 						.getProcessMemoryInfo(new int[]{runningAppProcessInfo.pid});
 				int totalPrivateDirty = memoryInfo[0].getTotalPrivateDirty() * 1024;
 				taskInfo.setMemorySize(totalPrivateDirty);
-				PackageInfo packageInfo = packageManager.getPackageInfo(
-						processName, 0);
-				Drawable icon = packageInfo.applicationInfo
-						.loadIcon(packageManager);
+				
+				PackageInfo packageInfo = packageManager.getPackageInfo(processName, 0);
+				//图标
+				Drawable icon = packageInfo.applicationInfo.loadIcon(packageManager);
 				taskInfo.setIcon(icon);
-				String appName = packageInfo.applicationInfo.loadLabel(
-						packageManager).toString();
+				//appName
+				String appName = packageInfo.applicationInfo.loadLabel(packageManager).toString();
 				taskInfo.setAppName(appName);
+				
 				int flags = packageInfo.applicationInfo.flags;
 				if((flags & ApplicationInfo.FLAG_SYSTEM) != 0 ){
 					taskInfo.setUserApp(false);
@@ -63,10 +66,8 @@ public class TaskInfoParser {
 				taskInfo.setIcon(context.getResources().getDrawable(
 						R.drawable.ic_launcher));
 			}
-			
 			TaskInfos.add(taskInfo);
 		}
-
 		return TaskInfos;
 	}
 

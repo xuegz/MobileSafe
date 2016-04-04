@@ -7,6 +7,9 @@ public class QueryPhone {
 	private static final String PATH="data/data/com.example.mobilesafe/files/address.db";
 	private static String location;
 	public static String getAddress(String number){
+		/*
+		 * 打开数据流库
+		 */
 		SQLiteDatabase db=SQLiteDatabase.openDatabase(PATH, null, SQLiteDatabase.OPEN_READONLY);
 		Cursor cursor;
 		String sql="select location from data2 where id=(SELECT outkey FROM data1 where id=?)";

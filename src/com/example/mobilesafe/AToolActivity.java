@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 
+/*
+ * 高级工具页面
+ */
 public class AToolActivity extends Activity {
 
 	@Override

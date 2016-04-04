@@ -2,33 +2,18 @@ package com.example.bean;
 
 import android.graphics.drawable.Drawable;
 
-
+/*
+ * 任务管理
+ */
 public class TaskInfo {
 	
-	private Drawable icon;
-
-	private String packageName;
+	private Drawable icon;//图标
+	private String packageName;//包名
+	private String appName;//app名字
+	private long memorySize;//内存大小
+	private boolean userApp;//是否为用户app
+	private boolean checked;//
 	
-	private String appName;
-	
-	private long memorySize;
-	
-	
-	
-	/**
-	 * �Ƿ����û�����
-	 */
-	private boolean userApp;
-
-	/**
-	 * �жϵ�ǰ��item����Ŀ�Ƿ񱻹�ѡ��
-	 */
-	private boolean checked;
-	
-	
-	
-	
-
 	public boolean isChecked() {
 		return checked;
 	}

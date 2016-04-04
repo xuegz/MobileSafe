@@ -10,6 +10,9 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.telephony.SmsMessage;
 
+/*
+ * 
+ */
 public class CallSafeService extends Service {
 	private BlacknumberDao blacknumberDao;
 	private InnerReceiver receiver;
@@ -21,6 +24,9 @@ public class CallSafeService extends Service {
 	public void onCreate() {
 		super.onCreate();
 		blacknumberDao=new BlacknumberDao(this);
+		/*
+		 * 绑定短信接受广播
+		 */
 		receiver = new InnerReceiver();
 		IntentFilter filter=new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
 		registerReceiver(receiver, filter);

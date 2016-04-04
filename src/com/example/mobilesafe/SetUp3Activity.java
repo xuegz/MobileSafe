@@ -13,6 +13,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+/*
+ * 手机防盗设置界面3
+ */
 public class SetUp3Activity extends SetUpActivity {
 	private EditText et_phone;
 	private SharedPreferences sp;
