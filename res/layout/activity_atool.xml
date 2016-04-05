@@ -17,5 +17,9 @@
         style="@style/AToolTextViewStyle"     
         android:text="短信备份"
         android:onClick="smsBackup"/>
+    <TextView  
+        style="@style/AToolTextViewStyle"     
+        android:text="程序锁"
+        android:onClick="appLock"/>
 
 </LinearLayout>

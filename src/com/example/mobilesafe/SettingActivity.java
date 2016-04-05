@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.example.service.CallSafeService;
+import com.example.service.WatchDogService;
 import com.example.view.SettingClickView;
 import com.example.view.SettingView;
 
@@ -20,23 +21,27 @@ import com.example.view.SettingView;
  */
 public class SettingActivity extends Activity {
 	private SettingView sv_update;
+	private SettingView sv_watch_dog;
 	private SettingView sv_phone;
 	private SettingView sv_black_number;
 	private SettingClickView scv_style;
 	private SettingClickView scv_location;
 	private SharedPreferences sp;
+	private Intent watchDogIntent;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_setting);
 		sv_update = (SettingView) findViewById(R.id.sv_update);
+		sv_watch_dog = (SettingView) findViewById(R.id.sv_watch_dog);
 		sv_phone=(SettingView) findViewById(R.id.sv_phone);
 		sv_black_number=(SettingView) findViewById(R.id.sv_black_number);
 		scv_style=(SettingClickView) findViewById(R.id.scv_style);
 		scv_location=(SettingClickView) findViewById(R.id.scv_location);
 		sp = getSharedPreferences("info", MODE_PRIVATE);
 		initUpdate();
+		initWatchDog();
 		initPhone();
 		initAddress();
 		initDialogLocation();
@@ -68,6 +73,38 @@ public class SettingActivity extends Activity {
 					//sv_update.setDesc("自动更新已开启");
 					sv_update.setStatus(true);
 					sp.edit().putBoolean("status", true).commit();
+				}
+			}
+		});
+	}
+	
+	/*
+	 * 看萌狗
+	 */
+	public void initWatchDog(){
+		boolean check_watchDog=sp.getBoolean("status_watchDog", false);
+		watchDogIntent = new Intent(this, WatchDogService.class);
+		if (check_watchDog){
+			sv_watch_dog.setStatus(true);
+			// 开启拦截服务
+			startService(watchDogIntent);
+		}else{
+			sv_watch_dog.setStatus(false);
+		}	
+		sv_watch_dog.setOnClickListener(new OnClickListener() {
+			private boolean checked;
+			public void onClick(View v) {
+				checked = sv_watch_dog.getStatus();
+				if (checked) {
+					sv_watch_dog.setStatus(false);
+					// 停止拦截服务
+					stopService(watchDogIntent);
+					sp.edit().putBoolean("status_watchDog", false).commit();
+				} else {
+					sv_watch_dog.setStatus(true);
+					// 开启拦截服务
+					startService(watchDogIntent);
+					sp.edit().putBoolean("status_watchDog", true).commit();
 				}
 			}
 		});
@@ -176,4 +213,7 @@ public class SettingActivity extends Activity {
 			}
 		});
 	}
+	
+	
+	
 }

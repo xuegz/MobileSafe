@@ -19,5 +19,7 @@
     <string name="title_activity_task">TaskActivity</string>
     <string name="title_activity_task_manager_setting">TaskManagerSettingActivity</string>
     <string name="title_activity_antivirus">AntivirusActivity</string>
+    <string name="title_activity_app_lock">AppLockActivity</string>
+    <string name="title_activity_enter_pwd">EnterPwdActivity</string>
 
 </resources>

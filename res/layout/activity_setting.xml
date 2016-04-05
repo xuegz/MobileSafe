@@ -14,6 +14,7 @@
     <TextView
         style="@style/TitleStyle"
         android:text="设置中心"/>
+    
 	<com.example.view.SettingView
 	    android:id="@+id/sv_update"
 	    android:layout_width="match_parent"
@@ -22,6 +23,14 @@
 	    myview:desc_on="自动更新已开启"
 	    myview:desc_off="自动更新已关闭"
 	    />
+	<com.example.view.SettingView
+	    android:id="@+id/sv_watch_dog"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    myview:title="看萌狗设置"
+	    myview:desc_on="看门狗已经打开"
+	    myview:desc_off="看门狗更新已经关闭"/>
+	
 	<com.example.view.SettingView
 	    android:id="@+id/sv_phone"
 	    android:layout_width="match_parent"

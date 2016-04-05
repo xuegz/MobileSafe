@@ -38,4 +38,10 @@ public class AToolActivity extends Activity {
 		ShowToastUtil.showToast(this, "备份成功！！！");
 	}
 	
+	/*
+	 * 程序锁
+	 */
+	public void appLock(View v){
+		startActivity(new Intent(this,AppLockActivity.class));
+	}
 }

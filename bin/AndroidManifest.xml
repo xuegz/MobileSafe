@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobilesafe"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="2.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-<!-- 权限 -->
+    <!-- 权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -41,7 +42,7 @@
         android:theme="@android:style/Theme.Black.NoTitleBar" >
         <uses-library android:name="android.test.runner" />
 
-<!-- activity -->
+        <!-- activity -->
         <activity
             android:name="com.example.mobilesafe.SplashActivity"
             android:label="@string/app_name" >
@@ -68,9 +69,12 @@
         <activity android:name="com.example.mobilesafe.AppManagerActivity" />
         <activity android:name="com.example.mobilesafe.TaskActivity" />
         <activity android:name="com.example.mobilesafe.TaskManagerSettingActivity" />
-		<activity android:name="com.example.mobilesafe.AntivirusActivity"/>
-		
-<!-- 广播	 -->	
+        <activity android:name="com.example.mobilesafe.AntivirusActivity" />
+        <activity android:name="com.example.mobilesafe.AppLockActivity" />
+        <activity android:name="com.example.mobilesafe.EnterPwdActivity"/>
+        
+        
+        <!-- 广播 -->
         <!-- 监听开机广播 -->
         <receiver android:name="com.example.receiver.SIMReceiver" >
             <intent-filter>
@@ -89,11 +93,13 @@
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
-<!-- 服务 -->
-        <service android:name="com.example.service.LocationService" ></service>
-        <service android:name="com.example.service.CallSafeService" ></service>
+        <!-- 服务 -->
+        <service android:name="com.example.service.LocationService" >
+        </service>
+        <service android:name="com.example.service.CallSafeService" >
+        </service>
+		<service android:name="com.example.service.WatchDogService"></service>
 
-        
     </application>
 
 </manifest>
