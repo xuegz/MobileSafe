@@ -71,7 +71,8 @@
         <activity android:name="com.example.mobilesafe.TaskManagerSettingActivity" />
         <activity android:name="com.example.mobilesafe.AntivirusActivity" />
         <activity android:name="com.example.mobilesafe.AppLockActivity" />
-        <activity android:name="com.example.mobilesafe.EnterPwdActivity"/>
+        <activity android:name="com.example.mobilesafe.EnterPwdActivity"
+            android:launchMode="singleInstance"/>
         
         
         <!-- 广播 -->
